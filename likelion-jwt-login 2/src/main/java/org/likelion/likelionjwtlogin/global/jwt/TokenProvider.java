@@ -51,7 +51,7 @@ public class TokenProvider { //jwt관련 토큰 로직 처리.
 
 		return Jwts.builder() //jwt만들기.
 			.setSubject(email) //토큰 제목
-			.setIssuedAt(date) //토큰 발급자 등록. 원래는 예로 www.apple.com막 이런식으로 발급자가 들어가야되는걸로 알긴하는데 흠냐 ㅋㅋ date가 드가있네용
+			.setIssuedAt(date) //토큰 발급 날짜 등록. setIssuer가 발급자 등록하는 거였네요. 수정합니다.
 			.setExpiration(expiryDate) //만료일 등록
 			.signWith(key, SignatureAlgorithm.HS512) //서명하는 키와 알고리즘을 등록.
 			.compact(); //jwt를 사실상 실제로 생성하며 selializable한 문자열로 만들어준다.
